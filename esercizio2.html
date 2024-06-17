@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout1</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(170deg,rgb(193, 188, 188), grey);
+            height: calc(100vh - 120px - 60px);
+        }
+        footer {
+            background-color: black;
+            width: 100%;
+            height: 120px;
+        }
+        .s1 {
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 60px;
+        }
+
+        .s1 h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            margin-left: 15px;
+        }
+        nav{
+            background-color: red;
+        }
+        .logotext {
+            display: flex;
+            align-items: center;
+        }
+        
+        main {
+            height: 100%;
+            width: 100%;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+         #gradiente {
+            background: linear-gradient(to right, #0ff, #ff00c3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="s1">
+        <div class="logotext">
+            <a href="#"></a>
+            <img src="./pizza.png" alt="logo" width="48px" height="48px">
+            <h2>layout</h2>
+        </div>
+        
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Galleria</li>
+                <li>Contatti</li>
+            </ul>
+        </nav>
+    </section>
+        <main>
+            <div class="title">
+            <h1 id="gradiente">Alessandra Steccato</h1>
+            </div>
+        </main>
+    
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
