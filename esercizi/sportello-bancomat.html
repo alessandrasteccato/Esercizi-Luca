@@ -140,9 +140,9 @@
 
 
 
-        let saldo = 5000;
+        let saldo = 4500;
 
-        document.getElementById("saldoAttuale").innerHTML = "£" + saldo;
+        document.getElementById("saldoAttuale").innerHTML = "€" + saldo;
 
         
 
@@ -163,6 +163,7 @@
             saldo = saldo + amount;
             
          }
+         print("Operazione completata con successo");
          document.getElementById("saldoAttuale").innerText = "£" + saldo;
 
          document.getElementById("amount").value = "0.00";
