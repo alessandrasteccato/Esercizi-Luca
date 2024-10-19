@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+             height: 100vh;
+             width: 100%;
+             background-color: aqua;
+        }
+
+        .big {
+            font-size: 40px !important;
+            font-weight: bold;
+        }
+
+        .riga1 {
+            height: 50%;
+            width: 100%;
+            background-color: violet;
+            display: flex;
+            
+        }
+
+        .riga2 {
+            height: 50%;
+            width: 100%;
+            background-color: yellow;
+            display: flex;
+        }
+
+        .box1 {
+            height: calc(100% - 10px);
+            width: calc(50% - 10px);
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            border-right: 10px solid black;
+            border-bottom: 10px solid black;
+            
+           
+        }
+         .box1:hover {
+            background-color: yellow;
+         }
+        .box2 {
+            width: calc(50% - 10px);
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 10px solid black;
+            border-bottom: 10px solid black;
+        }
+
+        .box2:hover {
+            background-color: yellow;
+        }
+        
+        .box3 {
+            height: 100%;
+            width: calc(50% - 10px);
+            background-color: palevioletred;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 10px solid black;
+            border-top: 10px solid black;
+        }
+        .box3:hover {
+            background-color: yellow;
+        }
+
+        .box4 {
+            height: 100%;
+            width: calc(50% - 10px);
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 10px solid black;
+            border-top: 10px solid black;
+        }
+        .box4:hover {
+            background-color: yellow;
+           
+        }
+
+        .cerchio {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border-radius: 75px;
+        }
+
+        .overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            z-index: 11;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(50, 255, 50, 0.749);
+        }
+        
+        .cerchio2 {
+            width: 100px;
+            height: 100px;
+            background-color:yellow;
+            border-radius: 75px;
+        }
+
+        .overlay2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            z-index: 13;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="riga1">
+        <div class="big box1">1</div>
+        <div class="box2 big">2</div>
+    </div>
+    <div class="riga2">
+        <div class="box3  big">3</div>
+        <div class="box4 big">4</div>
+    </div>
+
+    <div class="overlay">
+        <div class="cerchio"></div>
+    </div>
+    <div class="overlay2">
+        <div class="cerchio2"></div>
+    </div>
+
+</body>
+</html>

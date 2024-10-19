@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS funzioni esercizi</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            height: 300px;
+            width: 400px;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .but {
+            width: 80px;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <button class="but" onclick="trovaNumero(55)">Play</button>
+    </div>
+
+</body>
+<script>
+
+    /* const username = "ale";
+     const password = "123";
+ 
+     function verifica() {
+        let _username = prompt("inserisci username");
+        let _password = prompt("inserisci password");
+ 
+        if(_username == username && _password == password){
+         alert("Login effettuato con successo");
+        }else{
+         alert("Login non corretto");
+        }
+     }*/
+
+
+
+
+
+
+
+
+
+
+    /* function somma(){
+      let a = parseInt(prompt("Inserisci a"));  
+      let b = parseInt(prompt("Inserisci b"));
+      let c = a+b;
+      alert("il risultato e " + c);
+    }*/
+
+
+
+
+    /*function age(){
+       let numero = prompt("inserisci eta"); 
+       if(numero >= 18){
+        alert("Sei maggiorenne");
+       }else{
+        alert("Sei Minorenne");
+       }
+    }*/
+
+
+
+
+
+    /*function verifica(){
+        let a = parseInt(prompt("inserisci un numero"));
+        let b = parseInt(prompt("inserisci un numero"));
+        if(a>b){
+            alert(a);
+        }else if (a==b){
+          alert("A e B sono uguali");
+        }else{
+            alert(b);
+        }
+    }*/
+
+
+
+
+
+
+    /*inserisci gli anni di contributi e il sistema ti restituisce bonus stato 
+    <=24anni 0 bonus
+    25-39  200euro bonus
+    40-69  400 bonus
+    70=> 700 bonus*/
+
+    function bonus() {
+        let a = prompt("inserisci la tua eta");
+        if (a <= 24) {
+            alert("Non hai diritto al bonus");
+        } else if (a >= 25 && a <= 39) {
+            alert("Hai diritto a 200 euro di bonus");
+        } else if (a >= 40 && a <= 69) {
+            alert("Hai diritto a 400 euro di bonus");
+        } else {
+            alert("Hai diritto a 700 euro di bonus");
+        }
+    }
+
+
+
+
+
+
+
+
+    //compiti per casa:
+
+
+
+    /*L'utente deve inserire un numero che rappresenta la temperatura odierna. Dovrà apparire un messaggio diverso a seconda di quanti gradi sono, in particolare:  sotto i 10 gradi "Fa molto freddo", tra 11 e 18: "si può vivere", tra 19 e 26 "è primavera" e oltre i 27 "fa cavuru"*/
+
+
+    function temperatura() {
+        let a = parseInt(("Inserisci la temperatura"));
+
+        if (a <= 10) {
+            alert("Fa molto freddo");
+        } else if (a >= 11 && a <= 18) {
+            alert("Si puo vivere");
+        } else if (a >= 19 && a <= 26) {
+            alert("E primavera");
+        } else {
+            alert("Anto Fa Cavuru!!!");
+        }
+    }
+
+
+
+
+
+
+
+    /*Un prompt chiede all'utente di tradurre nella sua lingua la parola "Andiamo!". Se l'utente inserisce "Let's go" il programma risponde con un alert "English detected" se invece rispoinde "Amuninni" risponide "Sicilian detected, se invece scrive altre cose "Internal Error"*/
+
+    function lingua() {
+        let a = prompt("Inserisci nella tua lingua la parola -andiamo-");
+        if (a == "lets go") {
+            alert("English detected");
+        } else if (a == "muninni") {
+            alert("Sicilian detected");
+        } else {
+            alert("Internal Error");
+        }
+    }
+
+
+
+
+
+
+
+
+    /*Il programma gestisce il conto dell'utente che ha 1000 euro. Un primo prompt chiede se l'utente vuole Ritirare o Prelevare, (scegli tu come far scegliere tra queste due opzioni, se con un numero o una parola ) . Un secondo prompt chiede la somma da ritirare (o prelevare a seconda della prima scelta). Alla fine un alert visualizza il totale rimasto sul conto.*/
+
+
+    let conto = 1000;
+
+    function banca() {
+        let a = prompt("vuoi Prelevare o Versare?");
+        if (a == "Prelevare") {
+            let amount = parseInt(prompt("Quanto vuoi Prelevare?"));
+            conto = conto - amount;
+            alert("la tua poverta ammonta a: " + conto + "£");
+        } else if (a == "Versare") {
+            let amount = parseInt(prompt("Quanto vuoi Versare?"));
+            conto = conto + amount;
+            alert("il tuo nuovo saldo e di " + conto + "£");
+        } else {
+            alert("Opzione sbagliata")
+        }
+    }
+
+
+
+
+
+
+    /*Un prompt chiede all'utente di inserire 3 numeri e restituirà il minore tra i 3*/
+
+
+    function numeroMinore() {
+        let a = parseInt(prompt("Inserisci il primo numero"));
+        let b = parseInt(prompt("Inserisci il secondo numero"));
+        let c = parseInt(prompt("Inserisci il terzo numero"));
+
+        if (a < b && a < c) {
+            alert("il numero piu piccolo e: " + a);
+        } else if (b < a && b < c) {
+            alert("il numero piu piccolo e: " + b);
+        } else {
+            alert("il numero piu piccolo e:" + c);
+        }
+    }
+
+
+
+
+
+    /*Un prompt verifica le credenziali di login di un utente (le credenziali accettate sono "gino" come username e "333" come password. Il sistema però può essere bypassato se come username viene inserito "cannolo"*/
+
+    const username = "gino";
+    const password = "333";
+    let sicily = "cannolo";
+
+    function login() {
+        let _username = prompt("inserisci username");
+        let _password = prompt("inserisci password");
+
+        if (_username == sicily || (_username == username && _password == password)) {
+            alert("Login effettuato con successo!!");
+        } else {
+            alert("Login Fallito!!");
+        }
+    }
+
+
+
+
+
+    /*Un prompt chiede di inserire 3 numeri e deve verificare se i 3 sono stati inseriti in ordine crescente*/
+
+    function crescenti() {
+        let a = parseInt(prompt("Inserisci il primo numero"));
+        let b = parseInt(prompt("Inserisci il primo numero"));
+        let c = parseInt(prompt("Inserisci il primo numero"));
+
+        if (a < b && b < c) {
+            alert("Numeri in ordine");
+        } else {
+            alert("numeri non in ordine");
+        }
+    }
+
+
+
+
+
+    /*L'utente inserisce il punteggio di un esame tramite un prompt (tra 0 e 100). Se il punteggio è inferiore a 60, il programma deve mostrare "Insufficiente". Se è compreso tra 60 e 70, mostra "Sufficiente". Tra 71 e 85, "Buono". Tra 86 e 95, "Ottimo". Oltre 95, "Eccellente".*/
+
+    function punteggio() {
+        let a = parseInt(prompt("Inserisci il tuo punteggio"));
+
+        if (a < 60) {
+            alert("Insufficiente");
+        } else if (a >= 60 && a <= 70) {
+            alert("Sufficiente");
+        } else if (a >= 71 && a <= 85) {
+            alert("Buono");
+        } else if (a >= 86 && a <= 95) {
+            alert("Ottimo");
+        } else {
+            alert("Eccellente");
+        }
+    }
+
+
+
+
+
+
+    /*Viene chieso ti inserire 3 numeri, e viene mostrato come risultato, la media algebrica dei 3 numeri.*/
+
+
+    function media() {
+        let a = parseInt(prompt("Inserisci il primo numero"));
+        let b = parseInt(prompt("Inserisci il primo numero"));
+        let c = parseInt(prompt("Inserisci il primo numero"));
+
+        let media_ = (a + b + c) / 3;
+        alert(media_);
+    }
+
+
+
+
+
+    /*Viene chiesto all'utente di registrarsi e viene chiesto di inserire un username e password. Dopo aver inserito la password però viene chiesto di inserirla di nuovo per sicurezza e si deve controllare che la password inserita la seconda volta sia identica a quella inserita la prima volta. Si diano dei messaggi di risposta consoni caso per caso.*/
+
+
+    function registrati() {
+        let username_ = prompt("Inserire Username");
+        let password_ = prompt("Inserire Password");
+        let password_1 = prompt("Inserire Nuovamente La Passoword");
+        if (password_ == password_1) {
+            alert("Registrazione effettuato con successo!!");
+        } else {
+            alert("Registrazione fallita!!");
+        }
+    }
+
+
+
+
+
+
+    /*Si chieda all'utente di inserire il valore di lettura di un contatore. Se il numero è compreso tra 200 e 800 si dica che il valore è "Valido", viceversa la lettura è "Invalida". Se però il valore è esattamente 1220 allora si dica "Emergenza nucleare".*/
+
+    function contatore() {
+        let a = parseInt(prompt("Inserisci lettura del contatore"));
+        if (a >= 200 && a <= 800) {
+            alert("Lettura Valida");
+        } else if (a == 1220) {
+            alert("Emergenza Nucleare");
+        } else {
+            alert("Lettura non Valida");
+        }
+    }
+
+
+
+
+
+
+    /*L'utente deve scegliere se vuol comprare le caramelle o delle bombe a mano. Si faccia scegliere l'utente inserendo dei numeri. Dopo di ché si faccia inserire la quantità desiderata. Infine si stampi il totale della spesa considerando che le caramelle costano 2 euro l'una mentre le bombe a mano 18 euro l'una.*/
+
+    let prezzoCaramelle = 2;
+    let prezzoBombe = 18;
+
+
+    function spesa() {
+        let a = parseInt(prompt("Vuoi comprare le caramelle o le bombe?"));
+        if (a == 1) {
+            let quantita = parseInt(prompt("Quante caramelle vuoi comprare?"));
+            prezzoCaramelle = prezzoCaramelle * quantita;
+            alert("il totale della spesa delle caramelle e: " + prezzoCaramelle + "£");
+        } else if (a == 2) {
+            let amount = parseInt(prompt("Quante bombe vuoi?"));
+            prezzoBombe = prezzoBombe * amount;
+            alert("il totale della spesa delle bombe e: " + prezzoBombe + "£");
+        } else {
+            alert("il tuo carrello e vuoto");
+        }
+    }
+
+
+
+
+
+
+
+    /*Si crei un programma che chieda all'untete di inserire un voto in  30esimi e si faccia la conversione in 110ecimi. Se il voto iniziale non è compreso tra i valori 1 e 30 si dia un messaggio di errore perché non è valido.*/
+
+
+    function conversione() {
+        let voto30 = parseInt(prompt("Inserisci il tuo voto in 30esimi"));
+        if (voto30 >= 1 && voto30 <= 30) {
+            //voto30:30=x:110
+            //x= (voto30*110)/30
+            let voto110 = (voto30 * 110) / 30;
+            alert("il tuo voto in 110esimi e:" + voto110);
+        } else {
+            alert("Il tuo voto non e valido");
+        }
+    }
+
+
+
+
+
+
+    /*Generare un numero casuale da 1 a 10  che l'utente dovrà indovinare inserendolo nel prompt. Se il numero è quello casualmente generato gli si risponderà "Bravo hai indovinato". Se no gli si deve dare un indizio tipo "No il numero è troppo alto" o il "No il numero è troppo basso" a seconda. Il gioco termina quando ha indovinato. */
+
+    function gioco() {
+        let numeroCasuale = Math.floor(Math.random() * 10) + 1;
+        while (true) {
+            let a = parseInt(prompt("Indovina il numero segreto"));
+            if (a == numeroCasuale) {
+                alert("Hai Indovinato!! Il numero era proprio: " + numeroCasuale);
+                break;
+            } else if (a > numeroCasuale) {
+                alert("Hai inserito un numero troppo grande, ritenta");
+            } else {
+                alert("Hai messo un numero troppo piccolo, ritenta");
+            }
+        }
+    }
+
+
+
+    /*Viene chiesto di acquistare un prodotto. L'utente può scegliere tra 1. Scarpe (20€) , 2. Pantaloni (49€) , 3. Molotov (10€).  Poi deve inserire il quantitativo.  Per le scarpe c'è uno sconto del 30% per ordini di spesa superiori ai 100 euro. Per i pantanloni nessuno sconto, Per le Molotov c'è la promozione prendi 3 paghi 2. Quindi se ne prende 5 ne paga 4, se ne prende 6 ne paga sempre 4, se ne prende 7 ne paga 5 e così via.  Si stampi il totale.*/
+
+    let prezzoScarpe = 20;
+    let prezzoPantaloni = 49;
+    let prezzoMolotov = 10;
+
+
+    function shopping() {
+        let a = parseInt(prompt("Scegli il tuo prodotto che vuoi acquistare digitando il numero di corrispondenza"));
+
+        if (a == "1") {
+            let quantitaScarpe = parseInt(prompt("Quante scarpe vuoi acquistare?"));
+            let tot = quantitaScarpe * prezzoScarpe;
+            let sconto = 0;
+            if (tot >= 100) {
+                sconto = (tot * 30) / 100;
+            }
+            alert("Il totale è: " + (tot - sconto));
+        } else if (a == "2") {
+            let quantitaPantaloni = parseInt(prompt("Quanti pantaloni vuoi acquistare?"));
+            let totale = quantitaPantaloni * prezzoPantaloni;
+            alert("Il totale è: " + totale);
+        } else if (a == "3") {
+            let quantitaMolotov = parseInt(prompt("Quanti molotov vuoi acquistare?"));
+            let daStornare = Math.trunc(quantitaMolotov / 3);
+            let amount = (quantitaMolotov - daStornare) * prezzoMolotov;
+            alert("Il totale è: " + amount);
+        } else {
+            alert("Scelta sbgaliata");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /*Chiedi all'utente di inserire quattro voti (espressi in centesimi) tramite 4 prompt separati. Calcola la media aritmetica dei voti e mostra un messaggio che indica la media finale e se l'utente è promosso (media >= 60) o bocciato (media < 60). Ma attenzione, dai 4 voti e quindi dalla media va escluso il voto più basso.*/
+
+
+    function voti() {
+        let a = parseInt(prompt("Inserisci il tuo primo voto in 100esimi"));
+        if (!validaVoto(a)) {
+            alert("Voto non valido");
+            return
+        }
+        let minimo = a;
+        let b = parseInt(prompt("Inserisci il tuo secondo voto in 100esimi"));
+        if (!validaVoto(b)) {
+            alert("Voto non valido");
+            return
+        }
+        if (b < a) {
+            minimo = b;
+        }
+        let c = parseInt(prompt("Inserisci il tuo terzo voto in 100esimi"));
+        if (!validaVoto(c)) {
+            alert("Voto non valido");
+            return
+        }
+        if (c < minimo) {
+            minimo = c;
+        }
+        let d = parseInt(prompt("Inserisci il tuo quarto voto in 100esimi"));
+        if (!validaVoto(d)) {
+            alert("Voto non valido");
+            return
+        }
+        if (d < minimo) {
+            minimo = d;
+        }
+        let media = (a + b + c + d - minimo) / 3;
+        alert("La media e: " + media);
+    }
+
+    function validaVoto(voto) {
+        if (voto >= 0 && voto <= 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+    /*Si chieda all'utente di inserire 2 numeri e poi di scegliere se operare una addizione o una sottrazione. Infine si mostri il risultato dell'operazione selezionata. Si diano inoltre messaggi di errore se si scelgono opzioni non valide.*/
+
+
+
+    function calcoli() {
+        let a = parseInt(prompt("Inserisci il primo numero"));
+        let b = parseInt(prompt("Inserisci il secondo numero"));
+        let c = prompt("Vuoi fare un Addizione o una Sottrazione");
+
+        if (c == "addizione") {
+            let somma = a + b;
+            alert("Il risultato dell addizione è: " + somma);
+        } else if (c == "sottrazione") {
+            let meno = a - b;
+            alert("Il risultato della sottrazione è: " + meno);
+        } else {
+            alert("Scelta non valida!");
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    /* Chiedi all'utente di inserire la sua età tramite un prompt. Se l'età è inferiore a 13, mostra "Puoi guardare solo film per bambini". Se è tra 13 e 17, mostra "Puoi guardare film per ragazzi". Se è 18 o più, mostra "Puoi guardare qualsiasi film".*/
+
+
+    function age() {
+        let a = parseInt(prompt("Inserisci la tua età"));
+        if (a <= 13) {
+            alert("Puoi guardare film solo per bambini");
+        } else if (a >= 13 && a <= 17) {
+            alert("Puoi guardare film per ragazzi");
+        } else {
+            alert("Puoi guardare qualsiasi fiml");
+        }
+    }
+
+
+
+
+
+    /*L'utente deve calcolare la quantità giusta di colorante da aggiungere all'acqua per verniciare la sua bara. Nella confezione c'è scritto di scogliere 10ml di prodotto per ogni 5L d'acqua.  Si crei un calcolatore che dopo aver inserito il numero di Litri d'acqua e il calcolatore visualizza quanti ml di prodotto bisogna aggiungere. */
+
+
+    function bara() {
+        let litri = parseInt(prompt("Inserisci il numero di litri a tua disposizione"));
+
+        let calcolo = (litri * 10) / 5;
+        alert("Per la tua bara hai bisogno di: " + calcolo + "ml di prodotto");
+    }
+
+
+
+
+    /*Si inserisca il numero di minuti totali di un CD di musica, e poi il numero totali di minuti già trascorsi durante l'ascolto. Si dia un messaggio di errore in caso venga inserito un numero di minuti già ascoltato superiori al totale. Dopo di che si visualizzi la % di ascolto fin ora effettuato.*/
+
+
+    function music() {
+        let a = parseInt(prompt("Inserisci il totale dei minuti del tuo cd"))
+        let b = parseInt(prompt("Inserisci il totale dei minuti gia ascoltati"));
+        let x = Math.floor((100 * b) / a);
+
+        alert("Sei al " + x + "%");
+
+    }
+
+
+
+
+
+
+
+    /*Si chieda di inserire il proprio nome e poi il proprio genere "M" o "F". Dopo di che si chieda all'utente se è coniugato o meno, si risponda "si " o "no". Infine si visualizzi un messaggio che indichi se l'utente è "Nubile" o "Celibe" o "Sposato" o "Sposata" e si componga una frase del tipo "Ciao [Mario], vedo che tu sei [Celibe]" oppure "Ciao [Cristina], vedo che tu sei [Sposata]".   Le parentesi quadre sono per far notare le parti dinamiche. */
+
+
+
+    function control() {
+        let nome = prompt("Inserisci il tuo nome");
+        let sesso = prompt("Inserisci M o F");
+        let sposato = prompt("Sei Sposato/a") == "si" ? true : false;
+        let statoCivile = "sconosciuto";
+
+        if (sposato && sesso == "M") {
+            statoCivile = "Sposato";
+        } else if (sposato && sesso == "F") {
+            statoCivile = "Sposata";
+        } else if (!sposato && sesso == "M") {
+            statoCivile = "Celibe";
+        } else if (!sposato && sesso == "F") {
+            statoCivile = "Nubile";
+        } else {
+            alert("Errore");
+        }
+        alert("Ciao " + nome + ", vedo che tu sei " + statoCivile);
+    }
+
+
+
+
+
+    /*L'utente inserisce due numeri e poi deve scegliere se fare una moltiplicazione o una divisione. Poi si mostra il risultato. Se però mostra una divisione e tenta di dividere per zero, si deve mostrare un messaggio di errore indicando che non è possibile dividere per zero. */
+
+    function operazione() {
+        let a = parseInt(prompt("Inserisci il primo numero"));
+        let b = parseInt(prompt("Inserisci il secondo numero"));
+        let c = prompt("Vuoi fare una moltiplicazione o una divisione?");
+
+        if (c === "moltiplicazione") {
+            let somma = a * b;
+            alert("Il risultato dell' operazione e: " + somma);
+        } else if (c === "divisione") {
+            if (b === 0) {
+                alert("Impossibile dividere per zero");
+            } else {
+                let somma = a / b;
+                alert("Il risultato della divisione e: " + somma);
+            }
+        } else {
+            alert("Opearazione non riuscita");
+        }
+    }
+
+
+
+
+
+
+    /*Chiedi all'utente di inserire l'importo totale della spesa e la somma di denaro pagata tramite due prompt. Se il denaro pagato è inferiore al totale, mostra "Pagamento insufficiente". Se è esattamente uguale, mostra "Pagamento esatto, non c'è resto". Se è superiore, mostra "Il resto da dare è [importo]" dove [importo] è il denaro da restituire.*/
+
+
+    function compere() {
+        let totSpesa = parseInt(prompt("Inserisci il totale delle spesa"));
+        let totPagato = parseInt(prompt("Inserisci il totale pagato"));
+
+        if (totPagato < totSpesa) {
+            alert("Pagamento Insufficiente");
+        } else if (totSpesa == totPagato) {
+            alert("Pagamento esatto, non c'e resto");
+        } else if (totPagato > totSpesa) {
+            let importo = totPagato - totSpesa;
+            alert("Il resto da dare e: " + importo);
+        } else {
+            alert("Operazione non riuscita");
+        }
+
+    }
+
+
+
+
+
+    /*Chiedi all'utente di inserire il totale delle vendite effettuate in un mese tramite un prompt. Calcola la commissione basata sulle vendite: 5% per vendite inferiori a 1000€, 7% per vendite tra 1000€ e 5000€, e 10% per vendite superiori a 5000€. Mostra l'ammontare della commissione.*/
+
+
+
+
+    function vendite() {
+        let sales = parseInt(prompt("Inserisci il totale delle vendite del mese corrente"));
+        if (sales <= 1000) {
+            let somma = (sales * 5) / 100;
+            alert("Le commissioni pagate per questo mese sono: " + somma + "£");
+        } else if (sales > 1000 && sales <= 5000) {
+            let somma = (sales * 7) / 100;
+            alert("Le commissioni da pagare per questo mese sono: " + somma + "£");
+        } else if (sales > 5000) {
+            let somma = (sales * 10) / 100;
+            alert("Le commissioni da pagare per questo mese sono: " + somma + "£");
+        } else {
+            alert("Opearazione non riuscita");
+        }
+    }
+
+
+
+
+
+    /*Premendo un bottone appare un login che chiede "vuoi un complimento farlocco ma gratis ? " se l'utente dice "si" il programma risponde con un complimento "sei certamente molto bello e intelligente". E dopo di ché ripropone in loop la richiesta "vuoi un complimento farlocco ma gratis ?". Il programma termina solo se l'utente dice "no".*/
+
+
+
+
+    function complimento() {
+        a = prompt("Vuoi un complimento farlocco, ma gratis?")
+
+        if (a == "si") {
+            alert("Sei certamente molto bello ed intelligente");
+        }
+
+        if (a == "no") {
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*Un programam deve calcora la multa da dare a seconda della velocità raggunta davanti l'autovelox. Fino a 90 km/h non c'è nessuna multa. Da 91 a 119, vi è una contravvenzione fissa di 36 euro. Dai 120 in su si parte da 40 euro più 5 euro ogni 2km/h sopra i 120.*/
+
+
+
+    let multaFissa = 40;
+
+    function multa() {
+        let a = parseInt(prompt("Inserisci la tua velocita in km/h per calcolare la somma della tua multa"));
+
+
+        if (a <= 90) {
+            alert("Nessuna multa da pagare");
+        } else if (a >= 91 && a <= 119) {
+            alert("Il totale della multa da pagare e di 36£");
+        } else if (a >= 120) {
+            let kilometro = a - 120;
+            let somma = multaFissa + (kilometro / 2) * 5;
+            alert("Il totale della multa da pagare e di: " + somma + "£");
+        } else {
+            alert("Operazione non riuscita");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    function cicloFor() {
+        let numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        for (i = 0; i < numeri.length; i++) {
+            console.log("numeri[" + i + "] = " + numeri[i]);
+
+        }
+        console.log(numeri[0] + " " + numeri[1]);
+        console.log("L'ultimo numero e: " + numeri[numeri.length - 1]);
+    }
+
+
+
+
+
+
+
+
+    let array = [5, 2, 55, 11, 4, 6]
+    let trovato = trovaInArray(array, 88);
+
+    function trovaInArray(array, x) {
+
+        for (i = 0; i < array.length; i++) {
+            if (array[i] == x) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
+
+    function leggiAlContrario(array) {
+
+        for (i = array.length - 1; i >= 0; i--) {
+            console.log("array[" + i + "] = " + array[i]);
+        }
+    }
+
+
+
+
+    function trovaPari() {
+        let array = [2, 7, 9, 4, 6, 0, 12];
+        for (i = 0; i < array.length; i++) {
+
+            if (array[i] % 4 != 0) {     // per trovare il numero pare usare 0 mentre per dispari usare 1 oppure != 0
+                console.log(array[i]);
+            }
+        }
+    }
+
+
+
+    function trovaMax() {
+        let array = [-200, -30, -45, -22, -80, -10, -12, -7];
+        let max = array[0];
+        for (i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        console.log("Il numero maggiore e: " + max);
+        return max
+    }
+
+
+
+
+    let allGirls = ["F", "F", "F", "F"];
+    let surpriseTeam = ["F", "F", "F", "M", "F", "F"];
+
+
+    function checkFemaleTeam(array) {
+        for (i = 0; i < array.length; i++) {
+            if (array[i] != "F") {
+                console.log("Ho trovato un intruso");
+                return false;
+            }
+        }
+        console.log("Nessun maschietto pervertito trovato");
+        return true;
+    }
+
+
+
+
+    /*Si crei una funzione che riceva un array di numeri e calcoli il minimo.*/
+    //i=2
+    //min=2
+    //arraylenght = 9
+    function trovaMin() {
+        let array = [10, 2, 40, 3, 55, 99, 87, 13, 5];
+        let min = array[0];
+        for (i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        console.log("Il numero minore e: " + min);
+        return min
+    }
+
+
+
+    /*trova il numero x passato in argomento e restituisce true se lo trova o false se non lo trova*/
+
+
+    let numbers = [4, 34, 2, 6, 90, 87, 55, 40, 17];
+
+    function trovaNumero(x) {
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] == x) {
+                console.log("Numero Trovato: " + x + " e sta alla " + (i + 1) + "* posizione");
+                return true;
+            }
+        }
+        console.log("Numero non Trovato");
+        return false;
+    }
+
+
+
+
+    /*la funzione restituisce il numero di elementi pari contenuti nell array numbers*/
+
+    function contaPari() {
+        let count = 0;
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+
+
+
+    // controlla che 2 array siano uguali tra loro
+
+    let array1 = [45, 2, 5, 89, 67];
+    let array2 = [45, 2, 6, 89, 67];
+    array2=array1
+    if(array1==array2){
+        console.log("Si, sono uguali");
+    }else{
+        console.log("No, non sono uguali");
+    }
+
+    function arrayUguali(a1, a2) {
+        if (a1.lenght != a2.lenght) {
+            console.log("Hanno lunghezze diverse");
+            return false;
+        }
+
+        for (i = 0; i < a1.length; i++) {
+            if (a1[i] != a2[i]) {
+                console.log("Sono diversi");
+                return false;
+            }
+        } return true;  /* ricordati che se non usi la [i] non controlla i singoli elementi dentro un array ma confronta solo l'indirizzo di dove sono allocati gli array (dove stanno in memoria)*/
+    }
+
+
+ 
+
+
+
+
+
+
+    /*Si crei una funzione che dato un array di interi restituisca true se contiene tutti numeri maggiori di 10, false viceversa*/
+
+
+
+
+
+</script>
+
+</html>

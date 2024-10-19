@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendina</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            height: 400px;
+            width: 400px;
+            background-color: bisque;
+            padding: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .pulsante {
+            padding: 6px 20px;
+            border-radius: 6px;
+            border: none;
+            background-color: rgb(72, 72, 202);
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .expandable {
+            padding: 10px;
+            background-color: rgb(198, 198, 198);
+            display: none;
+
+        }
+
+        .triangolo {
+            border: solid white;
+            margin-left: 8px;
+            border-width: 0px 0px 3px 3px;
+            padding: 4px;
+            display: inline-block;
+            transform: rotate(-45deg);
+            transition: transform 0.2s;
+        }
+
+        .triangolo.expanded {
+            transform: rotate(+135deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h1>Ciao</h1>
+        <hr>
+        <button class="pulsante" onclick="toggleExpandableContent()">
+            Descrizione <span class="triangolo"></span>
+        </button>
+        <div class="expandable" id="expandable">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsum exercitationem quos eius harum. Perferendis perspiciatis possimus, dolore excepturi pariatur reiciendis veritatis cupiditate accusamus laboriosam debitis molestiae quasi distinctio. Magnam!</p>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eveniet unde nulla perspiciatis earum omnis ab consequatur amet illo, fugiat ratione alias natus pariatur esse eos ex accusamus a aperiam.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleExpandableContent(){
+            const content= document.getElementById("expandable");
+            const triangolo= document.querySelector(".triangolo");
+            if (content.style.display=="block"){
+                content.style.display="none";
+                triangolo.classList.remove("expanded");
+
+            } else{
+                content.style.display="block";
+                triangolo.classList.add("expanded");
+            }
+        }
+    </script>
+</body>
+</html>
+
+

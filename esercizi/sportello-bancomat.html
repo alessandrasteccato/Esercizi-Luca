@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportello Bancomat</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .card{
+            background-color: #ffffff;
+            height: 400px;
+            width: 400px;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2{
+            margin-bottom: 20px;
+        }
+
+        .form{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            
+        }
+
+        select,input{
+            box-sizing: border-box;
+            width: calc(100%);
+            padding: 8px 10px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #dddddd;
+            
+        }
+
+        label{
+            margin-bottom: 10px;
+        }
+
+        #amount{
+            text-align: right;
+        }
+
+        button{
+            border-radius: 4px;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .verde{
+            background-color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .verde:hover{
+            background-color: #189d35;
+        }
+
+        .blue{
+            background-color: #007bff;
+        }
+
+        .blue:hover{
+            background-color:#006bef;
+        }
+`   
+        .disabled{
+            background: grey;
+            color: #cfcfcf;
+            cursor: default; /* cursore di default */
+        }
+
+        .saldo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #saldoAttuale{
+            margin-left: 10px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Operazione Bancaria</h2>
+        <div class="form">
+            <label for="operationType">Seleziona l'Operazione</label>
+            <select id="operationType">
+                <option value="p">Prelievo</option>
+                <option value="v">Versamento</option>
+            </select>
+        </div>
+        <div class="form">
+            <label for="amount">Importo (£):</label>
+            <input id="amount" type="number" min = "0" placeholder = "0.00" step="0.01">
+        </div>
+        <button class="verde" onclick="completeOperation()">Completa Operazione</button>
+        <button class="disabled" id="listamovimenti">Lista Movimenti</button>
+        <div class="saldo">
+            <h4>Saldo Attuale:</h4>
+            <span id="saldoAttuale">-</span>
+        </div>
+    </div>
+    
+    <script>
+
+        class Movimento{
+            constructor(type, amount){
+                this.type = type;
+                this.amount = amount;
+                this.date = new Date().toLocaleString(); 
+            }
+        }
+
+
+        let movimenti = [];
+
+
+
+
+        let saldo = 1000;
+
+        document.getElementById("saldoAttuale").innerHTML = "£" + saldo;
+
+        
+
+
+
+        function completeOperation(){
+         let type = document.getElementById("operationType").value;
+         let amount = parseFloat(document.getElementById("amount").value);
+         
+         if(type == "p" && amount > saldo){
+            alert("Te piacerebbe");
+            return;
+         }
+
+         if(type == "p"){
+            saldo = saldo - amount;
+         }else{
+            saldo = saldo + amount;
+            
+         }
+         document.getElementById("saldoAttuale").innerText = "£" + saldo;
+
+         document.getElementById("amount").value = "0.00";
+
+         if(saldo == 0){
+            document.getElementById("operationType").value = "v";
+            soloVersamento();
+         }else{
+            ripristinaOperazioni();
+         }
+         
+         document.getElementById("listamovimenti").className = "blue";
+        }
+
+        function soloVersamento(){
+            document.getElementById("operationType").innerHTML = ""; // azzera html riferendosi all'id.
+            //document.getElementById("operationType").innerHTML = '<option value="v">Versamento</option>';  da NON usare in maniera profossionale(rammaggio).
+            
+            
+            const newOption = document.createElement("option"); // crea un elemento html
+            newOption.value = "v"; // valore dell elemento html
+            newOption.text = "Solo Versamento"; // quello che vuoi scrivere/appaia 
+            document.getElementById("operationType").appendChild(newOption); //con appendchild agganci l' elemento creato dentro l' elemento genitore 
+            
+
+
+            //document.getElementById("listamovimenti").style.backgroundColor = "red"; // con style modifichi il css
+        }
+
+
+        function ripristinaOperazioni(){
+            document.getElementById("operationType").innerHTML = ""; // azzera html riferendosi all'id.
+            
+            //document.getElementById("operationType").innerHTML = '<option value="v">Versamento</option>';  da NON usare in maniera profossionale(rammaggio).
+            
+            
+            const newOption = document.createElement("option"); // crea un elemento html
+            newOption.value = "v"; // valore dell elemento html
+            newOption.text = "Versamento"; // quello che vuoi scrivere/appaia 
+            document.getElementById("operationType").appendChild(newOption); //con appendchild agganci l' elemento creato dentro l' elemento genitore 
+            
+
+
+            const newOption2 = document.createElement("option"); // crea un elemento html
+            newOption2.value = "p"; // valore dell elemento html
+            newOption2.text = "Prelievo"; // quello che vuoi scrivere/appaia 
+            document.getElementById("operationType").appendChild(newOption2);
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

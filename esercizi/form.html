@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            height: 300px;
+            width: 400px;
+            background-color: rgb(188, 127, 245);
+            border-radius: 10px;
+        }
+
+        .loginform {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .cont h1 {
+            text-align: center;
+            color: white;    
+        }
+
+        .cont hr {
+            width: 90%;
+            background-color: white;
+            height: 1px;
+            border: none;
+        }
+
+        .item {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .item label {
+            width: 100px;
+            display: inline-block;
+            color: white;
+        }
+
+        .item input {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            height: 24px;
+            border-radius: 8px;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .item input:focus {
+            outline: none;
+        }
+        
+        ::placeholder {
+            font-style: italic;
+        }
+
+        .itembutton {
+            margin-top: 20px;
+            height: 33px;
+            border-radius: 10px;
+            border: none;
+            background-color: blueviolet;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1>Sign In</h1>
+        <hr>
+        <form class="loginform" action="#" method="post" onsubmit="login(event); alert('ciao')">
+            <div class="item">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="inserisci username">
+            </div>
+            <div class="item">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="inserisci password">
+            </div>
+            <button class="itembutton" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+<script>
+    function login(event) {
+        const username= document.getElementById('username').value;
+        alert("il tuo username e "+ username);
+        const password= document.getElementById('password').value;
+        alert("la tua password e corretta "+ password);
+    }
+</script>
+</html>
+

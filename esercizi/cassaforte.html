@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassaforte</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgb(74, 74, 255);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .but{
+            padding: 10px 50px;
+            border-radius: 8px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .but:hover{
+            background-color: aqua;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="sfondo">
+        <button class="but" onclick="main()">Apri Cassaforte</button>
+    </div>
+
+
+</body>
+<script>
+
+    const pinCorretto = "2206";
+    let tentativi = 0;
+
+
+    function main() {
+        while(true){
+            if(tentativi==3){
+                sfondoRosso();
+                alert("Carta Bloccata!");
+                break;
+            }
+            let pin = prompt("Inserisci Pin");
+            if(pin==pinCorretto){
+                sfondoVerde();
+                alert("Pin Corretto");
+                tentativi= 0;
+                break;
+            }else{
+                sfondoRosso()
+                alert("Pin Incorretto");
+                tentativi++;
+            }
+        }
+
+    }
+
+    function sfondoVerde() {
+        let container = document.getElementById("sfondo");
+        container.style.backgroundColor = "green";
+
+    }
+
+    function sfondoRosso() {
+        let container = document.getElementById("sfondo");
+        container.style.backgroundColor = "red";
+
+    }
+
+
+
+
+
+
+
+
+</script>
+
+</html>

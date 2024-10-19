@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>provajs</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*function dividi(a){
+        let c=a/2;
+        return c;
+    }
+    let risultato=dividi(10);
+    console.log("la meta di 10 e " + risultato);
+
+    function
+
+    function raddoppia(a){
+        return a*2;
+    }
+
+    console.log("il doppio di 10 e: " + raddoppia(10));*/
+
+    /*function quadruplo(a){
+        let c=a*4;
+        return c;
+    }
+    let risultato=quadruplo(2);
+    console.log("il quadruplo di 2 e: " + risultato);
+
+
+    function quadruplo(a){
+        return a*4;
+    }
+    console.log("il quadruplo di 2 e: " + quadruplo(2) + " pertanto e un numero pari.");*/
+
+
+    
+
+
+
+
+
+    /*function dieci(b){
+        return b*10
+    }
+    console.log("dieci per 10 fa: " + dieci(10));*/
+
+
+    /*function dieci(b){
+        let a=b*10;
+        return a
+    }
+
+    let risultato=dieci(10);
+    console.log("dieci per 10 fa: " + risultato)*/
+
+
+    /*function somma(a,b){
+        let c=a-b;
+        return c
+    }
+
+    let risultato= somma(5,2);
+    console.log("5-2 fa: " + risultato);*/
+
+
+
+    /*function somma(a,b){
+        return a-b
+    }
+
+    console.log("5-2 fa: " + somma(5,2));*/
+
+
+    /* function controllaMaggiorenne(age){
+        if (age<18){
+            console.log("sei ancora piccolo per la patente");
+        } else{
+            console.log("sei pronto per la patente");
+        }  
+    }
+
+    controllaMaggiorenne(20)*/
+
+    /*function controllaMaggiorenne(age){
+        if (age>17){
+            console.log("sei pronto per la patente");
+        } else{
+            console.log("sei troppo piccolo");
+        }
+    }
+    controllaMaggiorenne(18)
+
+    function max(a,b){
+       if(b>a){
+        return b;
+       } else{
+        return a;
+       }
+    }*/
+
+    /*function cento(a){
+    if(a>100){
+        console.log("il numero è maggiore di 100");
+    } else {
+        console.log("il numero è minore di 100");
+    }
+}
+console.log(cento(50))*/
+
+/*function isNotCacca(a) {
+    return a != "cacca";   // !=  diverso
+}
+
+console.log(isNotCacca("cacca"));*/
+
+/*function controllaNumeri(a,b){
+    return a > 0 && b > 0;
+}
+console.log(controllaNumeri(-20,30));*/ //perchè non dice false e poi true?
+
+
+
+/* funzione restituisce true se l'username appartiene all'insieme A, false altrimenti 
+A= luca,ale,dany*/
+
+ /*function isUsernameExisting(username) { 
+    if ( username == "luca" || username== "ale" || username== "dany" ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(isUsernameExisting("dany"));*/
+
+
+
+
+
+
+
+
+
+
+/*function login(username,password) {
+    if (username == "luca" && password== "123"){
+        return true; 
+    } else{
+        return false;
+    }
+}
+let user=prompt("inserire username");
+let pass=prompt("inserire password");
+
+console.log(login(user,pass));*/
+
+/*function isUsernameExisting(username){
+ return username== "ale";
+}
+
+
+function login(username,password){
+  if (username == "ale" && password=="ciao"){
+        return true;
+    } else {
+        return false
+    }
+}
+
+let user=prompt("inserisci username");
+if(isUsernameExisting(user)){
+    let pass=prompt("inserisci password");
+    console.log(login(user,pass));
+} else {
+    alert("prima registrati");
+}*/ 
+
+    let carta = "500500500";
+    let pin = "2206";
+    let amount = 1000;
+
+
+    function isCardExisting(card){
+        return card == carta;
+    }
+
+    function isPinCorrect(codice){
+        return pin == codice;
+    }
+
+    function ritiraSoldi(soldi){
+        if(amount >= soldi){
+            amount = amount - soldi;
+            alert("Ecco i tuoi " +soldi+" £");
+        } else{
+            alert("Saldo insufficiente");
+        }
+    }
+
+    function versaSoldi(soldi){
+        amount = amount + soldi;
+    }
+
+    let userCarta = prompt("inserire carta");
+        
+    if(isCardExisting(userCarta)){
+        console.log("carta riconosciuta");
+        //eleboro la carta
+        let userPin = prompt("Inserisci il Pin"); //1 Chiedo il pin
+        if(isPinCorrect(userPin)){
+           let scelta = prompt("se vuoi ritirare i soldi digita 1,se li vuoi versare digita 2"); //Se il pin è esatto chiedo se vuole ritirare i soldi o versarli
+           if(scelta == "1"){       //ritirare
+                let sommaDaRitirare = prompt("quanto vuoi prelevare?"); //Se li vuole ritirare , chiedo quanti soldi vuole ritirare
+                ritiraSoldi(parseInt(sommaDaRitirare));
+                    alert("nuovo saldo: " + amount);
+            } else if (scelta == "2"){  // versare
+                let sommaDaVersare= prompt("quanti soldi vuoi versare?");//se li vuole versare , chiedo quanti soldi vuole versare
+                versaSoldi(parseInt(sommaDaVersare));
+                    alert("nuovo saldo: " + amount);
+
+           } else {
+                alert("Scelta non valida, Arrivederci");
+           }
+                
+        } else{
+            alert("Pin Errato");   // mostra il messaggio pin errato
+        } 
+    }else{
+        alert("La carta non esiste");  //informo l'utente che la carta non esiste
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

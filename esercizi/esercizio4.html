@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Sito</title>
+    <script src="https://kit.fontawesome.com/957a344d83.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            height: 100%;
+            padding: 0;
+            display: flex;
+        }
+
+        .contenitore {
+            width: 100%;
+            display: flex;
+            margin: 20px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: green;
+            height: 100%;
+            width: 350px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            list-style: none;
+            font-weight: bold;
+            font-size: 28px;
+            color: rgb(14, 14, 238);
+            background-color: rgb(118, 118, 252);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            cursor: pointer;
+            /* serve per fare la manina*/
+
+        }
+
+        nav li:hover {
+            background-color: rgb(90, 90, 222);
+        }
+
+        main {
+            height: 100%;
+            width: calc(100% - 350px);
+            background-color: rgb(160, 127, 251);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iconcine {
+            color: white;
+
+        }
+
+        .eee {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .overlay {
+
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.818);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            position: fixed;
+            left: 0;
+            top: 0;
+
+
+        }
+
+        .popup {
+
+            height: 250px;
+            width: 400px;
+            background-color: rgb(234, 234, 234);
+            border-radius: 10px;
+            padding: 0px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .title {
+
+            display: flex;
+            align-items: center;
+
+        }
+
+        .buttons {
+
+            display: flex;
+            justify-content: right;
+            align-items: end;
+            height: 100%;
+            padding-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="contenitore">
+            <nav> <!-- ricorda che il tag nav funge gia da contenitore-->
+                <ul>
+                    <li onclick="alert('ciao '+ x); cambiasfondo();">
+                        <div class="eee"><i class="fa-solid fa-house-chimney iconcine"></i></div>Home
+                    </li>
+
+                    <li onclick="x++">
+                        <div class="eee"><i class="fa-solid fa-box-open iconcine"></i>
+                        </div>Products
+                    </li>
+
+                    <li onclick="raddoppia(x)">
+                        <div class="eee"><i class="fa-solid fa-user iconcine"></i></div>Contacts
+                    </li>
+                </ul>
+
+                <ul>
+                    <li onclick="areyousure()">
+                        <div class="eee">
+                            <i class="fa-solid fa-right-from-bracket iconcine"></i>
+                        </div>
+                        Logout
+                    </li>
+                </ul>
+            </nav>
+
+            <main id="sfondo">
+                <h1>Buongiorno</h1>
+            </main>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="popup">
+            <div class="title">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h2>Are you sure to Logout?</h2>
+            </div>
+            <hr>
+            <div class="buttons">
+                <button>NO</button>
+                <button>SI</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    x=5;
+
+
+    function areyousure() {
+       document.querySelector(".overlay").style.display= "flex";
+       document.querySelector(".overlay").style.backgroundColor="red";
+    } 
+
+    function raddoppia(n){
+        alert("il doppio di " + n + " e " + 2*n);
+        if(n>10) {
+            alert("numero enorme");
+        } else {
+            alert("numero piccolo");
+        }
+        
+    }  
+    function cambiasfondo() {
+        document.getElementById("sfondo").style.backgroundColor="red";
+    }
+</script>
+
+</html>

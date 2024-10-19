@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Canile{
+            constructor(nome,indirizzo){
+                this.nome = nome;
+                this.indirizzo = indirizzo;
+            }
+        }
+
+
+
+        class Persona{
+            constructor(nome,cognome){
+                this.nome = nome;
+                this.cognome = cognome;
+            } 
+        }
+
+
+
+        class Cane{
+            constructor(nome,razza,colore,proprietario){
+                this.nome = nome;
+                this.razza = razza;
+                this.colore = colore;
+                this.proprietario = proprietario;
+            } 
+            
+            abbaia(){
+                console.log("bau bau " + this.nome + " Il mio proproprietario e " + this.proprietario.nome);
+            }
+        }
+
+
+        let canile = new Canile("Il Rifugio","via dei Gatti");
+
+
+        let padrone = new Persona ("Giovanni","Rossi");
+        let padrone2 = new Persona ("Carmela","Bianchi");
+
+
+
+        let fido = new Cane("Briciola","Barboncino","Bianco",padrone);
+        let dog = new Cane("Lulu","Bassotto","Nero",padrone2);
+        let perro = new Cane("Lucky","Pastore Tedesco","Marrone",canile);
+
+        let cani = [fido,dog,perro];
+
+        let nomeCane = prompt("Inserisci il nome del cane");
+        let razzaCane = prompt("Inserisci la razza del cane");
+        let coloreCane = prompt("Inserisci il colore del cane");
+
+       
+        cani.push(new Cane(nomeCane,razzaCane,coloreCane,padrone2));
+
+        
+        for(i=0; i<cani.length; i++){
+            cani[i].abbaia();
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+        }
+
+        .cont{
+            height: 300px;
+            width: 400px;
+            background-color: rgb(128, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px;
+        }
+
+        .admin{
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            margin: 10px;
+        }
+        .user{
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <button class="admin" onclick="loginAdmin">Login Admin</button>
+        <button class="user" onclick="">Login User</button>
+    </div>  
+    
+</body>
+<script>
+
+
+
+     /*Crea due pulsanti, il primo permette di effettuare il login amministrativo con username e password già impostati (user = admin, pass = 123ad). Il secondo pulsante permette di resettare la password: prima viene chiesta la password attuale, se la password è corretta viene chiesta la nuova password, e poi una seconda volta per verificare che sia corretta con quella appena inserita. Una volta confermata la nuova password, la vecchia viene sovrascritta con la nuova e se si riprova a fare il login ora bisognerà usare la nuova password.*/
+
+
+
+
+
+
+    let userAdmin = "admin";
+    let passAdmin = "123ad";
+
+
+    function loginAdmin(){
+        let a = prompt("Inserisci username Admin");
+        let b = parseInt(prompt("Inserisci Password Admin"));
+
+        if(a == userAdmin && b == passAdmin){
+            alert("Login effettuato con successo!!Benvenuto Admin!");
+        }else{
+            alert("Login non effettuato con successo!! Riprovare.");
+        }
+    }
+
+
+
+
+
+</script>
+</html>
