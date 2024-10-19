@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi su come modificare elementi html con js</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(185, 255, 232);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hotel{
+            background-color: #ffffff;
+            height: 450px;
+            width: 400px;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        button{
+            border-radius: 4px;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .verde{
+            background-color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .verde:hover{
+            background-color: #189d35;
+        }
+
+        .form{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            
+        }
+
+        select,input{
+            box-sizing: border-box;
+            width: calc(100%);
+            padding: 8px 10px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #dddddd;
+            
+        }
+
+        datalist{
+            background-color: #dddddd
+        }
+
+        label{
+            margin-bottom: 10px;
+        }
+        #disp{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .rosso{
+            background-color: #981b1b;
+            margin-bottom: 10px;
+        }
+
+        .rosso:hover{
+            background-color:#6b0a0a;
+        }
+       
+
+        #prova{
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blue{
+            background-color: #007bff;
+        }
+
+        .blue:hover{
+            background-color:#006bef;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="hotel" id="form">
+        <h2 id="title">Hotel Le Palme</h2>
+        <div class="form">
+            <label for="prenota">Seleziona il tipo di Camera</label>
+            <input list="prenota">
+            <datalist id="prenota">
+                <option value="Singola">
+                <option value="Doppia">
+                <option value="Suite">
+            </datalist>
+        </div>
+        <div class="form">
+            <label for="persone">Persone</label>
+            <input id="persone" type="number" min="1" max="15" placeholder="1" step="1" onclick= "updateAv()">
+        </div>
+        <div id="prova">
+         <button class="verde" id="bottone" onclick="">Prenota</button>     
+        </div>
+       
+        <div class="disponibilita"></div>
+        <h4>Disponibilita persone:</h4>
+        <span id="disp">15</span>
+    </div>
+    </div>
+   
+    <script>
+        let disp = 15;
+        
+
+        function updateAv(){
+          let nPersone = document.getElementById("persone").value;
+          document.getElementById("disp").innerText = disp - nPersone;
+
+            if(nPersone == 3){
+                changeName();
+            }else{
+                reset();
+            }
+
+          if(disp == nPersone){
+            document.getElementById("bottone").className = "rosso";
+          }else{
+            document.getElementById("bottone").className = "verde";
+          }
+        }
+
+        function reset(){
+            document.getElementById("title").innerText = "Hotel le Palme";
+            document.getElementById("prova").innerHTML="";
+            verde();
+            document.getElementById("sitozozzo").remove(); // rimuove un elemento html
+
+        }
+  
+
+
+        // da usare quando si vuole aggiungere un elemento html con js
+
+        function linkAdd(){
+            let link = document.createElement("a");
+            link.href = "https://www.google.it/";
+            link.innerText = "Sito per Adulti";
+            link.id = "sitozozzo";
+            document.getElementById("form").appendChild(link);
+        }
+
+        function bottoneBlue(){
+            let bottone = document.createElement("button"); //  crea il bottone
+            bottone.innerText = "Ho 18 anni"; // assegna il testo in mezzo al tag bottonel 
+            bottone.className = "blue";
+            document.getElementById("prova").appendChild(bottone);
+
+
+        }
+
+        function verde(){
+            let bottone = document.createElement("button");
+            bottone.innerText = "Prenota";
+            bottone.className = "verde";
+            bottone.id = "bottone";
+            document.getElementById("prova").appendChild(bottone); 
+        }
+
+
+
+        // da usare quando si vuole sovrascrivere un elemento gia esistente in html 
+
+        function changeName(){
+            document.getElementById("title").innerText = "Hotel le Palle";
+            linkAdd();
+            document.getElementById("prova").innerHTML=""; // azzera elemento 
+            bottoneBlue();
+
+
+        }
+
+        
+    </script>
+
+</body>
+
+</html>
